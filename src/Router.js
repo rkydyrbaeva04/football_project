@@ -1,5 +1,5 @@
 import React from "react"
-import {BrowserRouter, Route, Routes} from "react-router-dom"
+import {HashRouter, Route, Routes} from "react-router-dom"
 
 import {Container} from "react-bootstrap"
 
@@ -30,7 +30,7 @@ const defaultRoutes = [
 
 const Router = () => {
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Header/>
             <Container as='content'>
                 <Routes>
@@ -42,7 +42,7 @@ const Router = () => {
                 </Routes>
             </Container>
             <Footer/>
-        </BrowserRouter>
+        </HashRouter>
     )
 }
 
