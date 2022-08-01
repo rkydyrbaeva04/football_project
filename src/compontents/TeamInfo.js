@@ -4,8 +4,9 @@ import {Col, Form} from "react-bootstrap"
 
 export const TeamInfo = ({number, scores, players, playersString, teamInfoSetter}) => {
 
-    const setScores = (scores) => {
-        scores = parseInt(scores)
+    const setScores = (event) => {
+        scores = parseInt(event.target.value)
+        event.target.value = scores
 
         teamInfoSetter({
             number,
@@ -39,8 +40,8 @@ export const TeamInfo = ({number, scores, players, playersString, teamInfoSetter
                     <Form.Label className='ms-2' htmlFor="scores">Scores</Form.Label>
                     <Form.Control id="Scores" type='number' min={1}
                                   placeholder="Scores"
-                                  value={scores}
-                                  onChange={event => setScores(event.target.value)}
+                                  value={parseInt(scores)}
+                                  onChange={event => setScores(event)}
                     />
                 </Form.Group>
             </fieldset>
